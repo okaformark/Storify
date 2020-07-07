@@ -5,12 +5,12 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const morgan = require('morgan');
 const expressHandleBars = require('express-handlebars');
-const routes = require('./routes/index');
+const login = require('./routes/index');
+const stories = require('./routes/stories');
 const auth = require('./routes/auth');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
-const { Mongoose } = require('mongoose');
 
 //load dotenv file
 dotenv.config({ path: './config/config.env' });
@@ -55,8 +55,9 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Link your routes
-app.use('/', routes);
+app.use('/', login);
 app.use('/auth', auth);
+app.use('/stories', stories);
 
 // create a port for server to listen on
 const PORT = process.env.PORT || 3000;
