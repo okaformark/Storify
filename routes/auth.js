@@ -16,4 +16,10 @@ router.get(
 	}
 );
 
+// @desc log out
+// @route GET TO /auth/logout
+router.get('/logout', (req, res) => {
+	req.logOut();
+	res.redirect('/');
+});
 module.exports = router;

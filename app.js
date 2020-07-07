@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const morgan = require('morgan');
@@ -7,7 +8,9 @@ const expressHandleBars = require('express-handlebars');
 const routes = require('./routes/index');
 const auth = require('./routes/auth');
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
+const { Mongoose } = require('mongoose');
 
 //load dotenv file
 dotenv.config({ path: './config/config.env' });
@@ -40,6 +43,7 @@ app.use(
 		secret: 'dumbledore',
 		resave: false,
 		saveUninitialized: false,
+		store: new MongoStore({ mongooseConnection: mongoose.connection }),
 	})
 );
 
