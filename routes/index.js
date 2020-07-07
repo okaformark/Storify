@@ -19,6 +19,7 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
 			stories,
 		});
 	} catch (error) {
+		console.error('error', error);
 		res.render('error/500');
 	}
 });

@@ -24,15 +24,26 @@ connectDB();
 // initialize express
 const app = express();
 
+//initialize body parser
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 //Use morgan for logging any client request error
 if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('dev'));
 }
 
+//Handlebar helper
+const { formatDate } = require('./helpers/hbs');
+
 // Intialize handlebars
 app.engine(
 	'.hbs',
-	expressHandleBars({ defaultLayout: 'main', extname: '.hbs' })
+	expressHandleBars({
+		helpers: { formatDate },
+		defaultLayout: 'main',
+		extname: '.hbs',
+	})
 );
 app.set('view engine', '.hbs');
 
