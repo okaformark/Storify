@@ -28,6 +28,7 @@ const app = express();
 //initialize body parser
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.disable('etag');
 
 //initialize method override for put
 app.use(
