@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
         integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
         crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css">
     <title>Storify</title>
 </head>
 
 <body>
-    {{> _header}}
+    {{> _header ../user}}
     {{> _add_btn}}
     <div class="container">
         {{{body}}}
@@ -27,6 +27,7 @@
         crossorigin="anonymous"></script>
     <script>
         M.Sidenav.init(document.querySelector('.sidenav'))
+        M.Tooltip.init(document.querySelectorAll('#tooltipped'))
         M.FormSelect.init(document.querySelector('#status'))
         CKEDITOR.replace('body', {
             plugins: 'wysiwygarea, toolbar, basicstyles, link'

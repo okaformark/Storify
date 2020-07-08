@@ -24,15 +24,32 @@ connectDB();
 // initialize express
 const app = express();
 
+//initialize body parser
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 //Use morgan for logging any client request error
 if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('dev'));
 }
 
+//Handlebar helper
+const {
+	formatDate,
+	stripTags,
+	truncate,
+	editIcon,
+	passUserData,
+} = require('./helpers/hbs');
+
 // Intialize handlebars
 app.engine(
 	'.hbs',
-	expressHandleBars({ defaultLayout: 'main', extname: '.hbs' })
+	expressHandleBars({
+		helpers: { formatDate, stripTags, truncate, editIcon, passUserData },
+		defaultLayout: 'main',
+		extname: '.hbs',
+	})
 );
 app.set('view engine', '.hbs');
 
@@ -50,6 +67,16 @@ app.use(
 // set passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+app.use((req, res, next) => {
+	res.locals.user = req.user; // This is the important line
+	next();
+});
+
+//set global variables
+app.use((req, res, next) => {
+	res.locals.user = req.user || null;
+	next();
+});
 
 // create static folders
 app.use(express.static(path.join(__dirname, 'public')));
