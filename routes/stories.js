@@ -9,8 +9,6 @@ router.get('/add', ensureAuth, (req, res) => {
 	res.render('stories/add');
 });
 
-module.exports = router;
-
 //@desc post stories
 //@route POST TO /stories
 router.post('/', ensureAuth, async (req, res) => {
@@ -34,6 +32,7 @@ router.get('/', ensureAuth, async (req, res) => {
 			.lean();
 		res.render('stories/index', { stories });
 		console.log(stories);
+		console.log(stories.length);
 	} catch (error) {
 		console.error('error', error);
 		res.render('error/500');

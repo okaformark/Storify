@@ -2,13 +2,14 @@
     <div class="nav-wrapper container">
         <a href="#!" class="brand-logo center"><i class="fas fa-book-reader"></i>Storify</a>
         <ul id="nav-mobile" class="right hide-on-med-down ">
+            {{user}}
             <li>
                 <a href="#!" style="padding: 0 3em;"><i class="fas fa-search " aria-hidden="true"></i></a>
             </li>
             <li id="tooltipped" data-position="top" data-tooltip="Notifications">
                 <a href="#!" style="padding: 0 3em;"><i class="fas fa-bell " aria-hidden="true"></i></a>
             </li>
-            <li id="tooltipped" data-position="top" data-tooltip="{{user.displayName}}">
+            <li id="tooltipped" data-position="top" data-tooltip={{passUserData displayName }}>
                 <a href="#!" style="padding:0 3em;"><i class="fas fa-user " aria-hidden="true"></i></a>
             </li>
 
