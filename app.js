@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const morgan = require('morgan');
 const expressHandleBars = require('express-handlebars');
+const methodOverride = require('method-override');
 const login = require('./routes/index');
 const stories = require('./routes/stories');
 const auth = require('./routes/auth');
@@ -28,6 +29,17 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+//initialize method override for put
+app.use(
+	methodOverride((req, res) => {
+		if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+			let method = req.body._method;
+			delete req.body._method;
+			return method;
+		}
+	})
+);
+
 //Use morgan for logging any client request error
 if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('dev'));
@@ -40,13 +52,22 @@ const {
 	truncate,
 	editIcon,
 	passUserData,
+	select,
 } = require('./helpers/hbs');
+// const { delete } = require('./routes/index');
 
 // Intialize handlebars
 app.engine(
 	'.hbs',
 	expressHandleBars({
-		helpers: { formatDate, stripTags, truncate, editIcon, passUserData },
+		helpers: {
+			formatDate,
+			stripTags,
+			truncate,
+			editIcon,
+			passUserData,
+			select,
+		},
 		defaultLayout: 'main',
 		extname: '.hbs',
 	})
