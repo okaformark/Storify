@@ -8,6 +8,7 @@ const expressHandleBars = require('express-handlebars');
 const methodOverride = require('method-override');
 const login = require('./routes/index');
 const stories = require('./routes/stories');
+const userProfile = require('./routes/userProfile');
 const auth = require('./routes/auth');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
@@ -107,6 +108,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', login);
 app.use('/auth', auth);
 app.use('/stories', stories);
+app.use('/userProfile', userProfile);
 
 // create a port for server to listen on
 const PORT = process.env.PORT || 3000;

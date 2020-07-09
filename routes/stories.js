@@ -120,8 +120,8 @@ router.get('/user/:userid', ensureAuth, async (req, res) => {
 		})
 			.populate('user')
 			.lean();
-		res.render('stories/index', { stories });
 		console.log('mystory', stories);
+		res.render('stories/index', { stories });
 	} catch (error) {
 		console.error('error', error);
 		return res.render('error/500', error);

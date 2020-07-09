@@ -1,5 +1,12 @@
 <h6>Dashboard</h6>
-<h3>Welcome {{name}}</h3>
+{{!-- <ul class="collection"> --}}
+<span class="collection-item avatar">
+    <img src="{{user.image}}" alt="" class="circle">
+    {{!-- <small class="title">{{user.displayName}}</small> --}}
+    {{!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> --}}
+</span>
+{{!-- </ul> --}}
+<h3>Welcome {{user.displayName}} </h3>
 <p>Here are your stories</p>
 {{#if stories}}
 <table class="striped">
