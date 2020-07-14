@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
         integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
@@ -14,16 +16,99 @@
 </head>
 
 <body>
-    <div class="container login-container">
-        <div class="card">
-            <div class="card-content">
-                {{{body}}}
+    <header id="landing-image">
+        <h1>Welcome to Storify</h1>
+        <div class="container login-container">
+            <div class="card">
+                <div class="card-content">
+                    {{{body}}}
+                </div>
             </div>
         </div>
-    </div>
+    </header>
+
+    <section id="section-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, impedit ipsam nam dicta autem illum quis in.
+        Amet nisi minus sed odio, exercitationem aliquam natus quas illo ab blanditiis? Illo.
+        <div class="slider-area">
+            <div class="slider-container">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="img-area">
+                                <img class="d-block w-100"
+                                    src="https://vignette.wikia.nocookie.net/marvel-cinematic-universe-guide/images/2/28/Black_Widow.png/revision/latest?cb=20190121103200"
+                                    alt="First slide">
+                            </div>
+                            <div class="carousel-caption">
+                                <h3>Natasha Romanoff</h3>
+                                <h4>Spy</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi aliquid distinctio
+                                    velit blanditiis ea porro sapiente, dolorum, numquam explicabo nesciunt delectus
+                                    minima quos accusantium unde quibusdam. Enim quod ratione eaque.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="img-area">
+                                <img class="d-block w-100"
+                                    src="https://vignette.wikia.nocookie.net/moviedatabase/images/8/8c/Tony_Stark.jpg/revision/latest?cb=20150430161420"
+                                    alt="Second slide">
+                            </div>
+                            <div class="carousel-caption">
+                                <h3>Tony Stark</h3>
+                                <h4>Iron Man</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi aliquid distinctio
+                                    velit blanditiis ea porro sapiente, dolorum, numquam explicabo nesciunt delectus
+                                    minima quos accusantium unde quibusdam. Enim quod ratione eaque.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="img-area">
+                                <img class="d-block w-100"
+                                    src="https://vignette.wikia.nocookie.net/marvelhigh/images/b/bd/SteveRogers.jpg/revision/latest/top-crop/width/360/height/450?cb=20180215230711"
+                                    alt="Third slide">
+                            </div>
+                            <div class="carousel-caption">
+                                <h3>Steve Rogers</h3>
+                                <h4>Captain America</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi aliquid distinctio
+                                    velit blanditiis ea porro sapiente, dolorum, numquam explicabo nesciunt delectus
+                                    minima quos accusantium unde quibusdam. Enim quod ratione eaque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

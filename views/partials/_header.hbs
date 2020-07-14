@@ -4,17 +4,18 @@
         <ul id="nav-mobile" class="right hide-on-med-down ">
             {{../user}}
             <li>
-                <a href="#!" style="padding: 0 3em;"><i class="fas fa-search " aria-hidden="true"></i></a>
+                {{!-- <a href="#!" style="padding: 0 3em;"><i class="fas fa-search " aria-hidden="true"></i></a> --}}
             </li>
             <li id="tooltipped" data-position="top" data-tooltip="Notifications">
                 <a href="#!" style="padding: 0 3em;"><i class="fas fa-bell " aria-hidden="true"></i></a>
             </li>
-            {{!-- {{#passUserData displayName}} --}}
             <li id="tooltipped" data-position="top" data-tooltip={{ passUserData displayName }}>
                 <a href="#!" style="padding:0 3em;"><i class="fas fa-user " aria-hidden="true"></i></a>
             </li>
-            {{!-- {{/passUserData}} --}}
-
+            <form class="form-inline my-2 my-lg-0" action="action_php">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </ul>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large left"><i class="fas fa-bars"></i></a>
         <ul class="sidenav" id="mobile-demo">
@@ -22,7 +23,6 @@
             <li><a href="/dashboard">Dashboard</a></li>
             <li><a href="/auth/logout">LogOut</a></li>
             <li><a href="/userprofile">Profile</a></li>
-
         </ul>
     </div>
 </nav>
