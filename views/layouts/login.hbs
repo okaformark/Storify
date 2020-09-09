@@ -17,6 +17,21 @@
 
 <body>
     <header id="landing-image">
+        <div class="landing-header">
+            <div class="landing-nav">
+                <ul class="landing-nav-menu">
+                    <a href="#">
+                        <li>Login</li>
+                    </a>
+                    <a href="#">
+                        <li>Who we are</li>
+                    </a>
+                    <a href="#">
+                        <li>Testimonials</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
         <h1>Welcome to Storify</h1>
         <div class="container login-container">
             <div class="card">
@@ -28,8 +43,15 @@
     </header>
 
     <section id="section-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, impedit ipsam nam dicta autem illum quis in.
-        Amet nisi minus sed odio, exercitationem aliquam natus quas illo ab blanditiis? Illo.
+        <h1>About Storify</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, impedit ipsam nam dicta autem illum quis
+            in.
+            Amet nisi minus sed odio, exercitationem aliquam natus quas illo ab blanditiis? Illo.
+
+        </p>
+    </section>
+    <section id="section 3">
         <div class="slider-area">
             <div class="slider-container">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -109,6 +131,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-50px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
 </body>
 
 </html>
