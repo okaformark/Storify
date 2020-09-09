@@ -10,6 +10,7 @@
 	"author": "Mark Okafor",
 	"license": "MIT",
 	"dependencies": {
+		"bootstrap": "^4.5.0",
 		"connect-mongo": "^3.2.0",
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
