@@ -111,7 +111,7 @@ app.use('/stories', stories);
 app.use('/userProfile', userProfile);
 
 // create a port for server to listen on
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 // server listens to port
 app.listen(
