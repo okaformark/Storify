@@ -13,7 +13,9 @@ const auth = require('./routes/auth');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
+const firebase = require('firebase');
 
+firebase.initializeApp({ path: './config/firebaseConfig' });
 //load dotenv file
 dotenv.config({ path: './config/config.env' });
 
