@@ -103,15 +103,20 @@ app.use((req, res, next) => {
 	next();
 });
 
-// create static folders
-app.use(express.static(path.join(__dirname, 'public')));
-
 // Link your routes
 app.use('/', login);
 app.use('/auth', auth);
 app.use('/stories', stories);
 app.use('/userProfile', userProfile);
 
+if (process.env.NODE_ENV === 'production') {
+	// create static folders
+	app.use(express.static(path.join(__dirname, 'public')));
+
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+	});
+}
 // create a port for server to listen on
 const port = process.env.PORT || 5000;
 
