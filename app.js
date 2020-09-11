@@ -113,10 +113,10 @@ app.use('/stories', stories);
 app.use('/userProfile', userProfile);
 
 // create a port for server to listen on
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 // server listens to port
 app.listen(
-	PORT,
-	console.log(`server runs on ${process.env.NODE_ENV} mode on port ${PORT}`)
+	port,
+	console.log(`server runs on ${process.env.NODE_ENV} mode on port ${port}`)
 );
